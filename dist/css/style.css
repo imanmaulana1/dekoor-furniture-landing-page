@@ -69,10 +69,87 @@ html {
 
 body {
   font-family: var(--font-inter);
+  font-size: 1.6rem;
+  font-weight: var(--fw-400);
+  line-height: normal;
 }
 
 /* ====================== REUSABLE CLASS  ====================== */
 .container {
   max-width: 570px;
   width: 100%;
+  margin-inline: auto;
+}
+
+/* ====================== HEADER ====================== */
+.header {
+  background-color: var(--white-clr);
+  box-shadow: var(--shadow-md);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1.6em;
+}
+
+.header .header__logo img {
+  width: 107px;
+}
+
+.header__cta {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.header__cta .btn__hamburger {
+  background-color: inherit;
+}
+
+.header__cta .btn__sign,
+.header__cta .btn__cart {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--white-clr);
+  z-index: 99;
+}
+
+.nav__links {
+  position: relative;
+  top: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nav__item {
+  padding-inline: 1.6em;
+}
+
+.nav__item > a {
+  font-size: 1.4rem;
+}
+
+.nav__item:nth-child(2) > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  background-color: inherit;
 }
