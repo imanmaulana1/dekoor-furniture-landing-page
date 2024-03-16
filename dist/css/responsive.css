@@ -36,7 +36,11 @@
 
   .header .container {
     padding: 0;
-    height: 100px;
+    height: 141px;
+  }
+
+  .header .header__logo img {
+    width: 161px;
   }
 
   .header__cta .btn__hamburger,
@@ -49,6 +53,53 @@
     display: block;
   }
 
+  .header__cta .btn__sign {
+    padding: 12px 24px;
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: var(--fw-500);
+    line-height: var(--lh-24);
+    letter-spacing: -0.16px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: background-color 0.4s color 0.4s ease;
+    -webkit-transition: background-color 0.4s color 0.4s ease;
+    -moz-transition: background-color 0.4s color 0.4s ease;
+    -ms-transition: background-color 0.4s color 0.4s ease;
+    -o-transition: background-color 0.4s color 0.4s ease;
+  }
+
+  .btn__sign:hover {
+    background-color: var(--hover-primary);
+    color: var(--text-clr);
+  }
+
+  .header__cta .btn__cart {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    background-color: var(--text-clr);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: background-color 0.4s ease;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -ms-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+  }
+
+  .btn__cart:hover {
+    background-color: var(--hover-secondary);
+  }
+
   .navbar {
     position: static;
     box-shadow: none;
@@ -58,19 +109,35 @@
   .nav__links {
     position: static;
     flex-direction: row;
+    gap: 48px;
+  }
+
+  .nav__item > a {
+    position: relative;
+  }
+
+  .nav__item > a::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--text-clr);
+    transition: width 0.3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -ms-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+  }
+
+  .nav__item > a:hover::after {
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
     max-width: 1240px;
-  }
-
-  .header .container {
-    height: 140px;
-  }
-
-  .header .header__logo img {
-    width: 161px;
   }
 }

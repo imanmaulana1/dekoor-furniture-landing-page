@@ -12,6 +12,9 @@
   --white-clr: #ffffff;
   --light-grey-clr: #fcfafa;
 
+  --hover-primary: hsla(72, 66%, 83%, 0.705);
+  --hover-secondary: hsla(14, 25%, 27%, 0.842);
+
   /* =========== TYPHOGRAPHY =========== */
   --fw-400: 400;
   --fw-500: 500;
@@ -100,7 +103,7 @@ body {
 
 .header__cta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.6rem;
 }
 
