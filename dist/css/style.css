@@ -83,6 +83,53 @@ body {
   margin-inline: auto;
 }
 
+.btn__sign {
+  padding: 12px 24px;
+  background-color: var(--primary-clr);
+  color: var(--secondary-clr);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: var(--fw-500);
+  line-height: var(--lh-24);
+  letter-spacing: -0.16px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: background-color 0.4s color 0.4s ease;
+  -webkit-transition: background-color 0.4s color 0.4s ease;
+  -moz-transition: background-color 0.4s color 0.4s ease;
+  -ms-transition: background-color 0.4s color 0.4s ease;
+  -o-transition: background-color 0.4s color 0.4s ease;
+}
+
+.btn__sign:hover {
+  background-color: var(--hover-primary);
+  color: var(--text-clr);
+}
+
+.btn__cart {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background-color: var(--text-clr);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: background-color 0.4s ease;
+  -webkit-transition: background-color 0.4s ease;
+  -moz-transition: background-color 0.4s ease;
+  -ms-transition: background-color 0.4s ease;
+  -o-transition: background-color 0.4s ease;
+}
+
+.btn__cart:hover {
+  background-color: var(--hover-secondary);
+}
+
 /* ====================== HEADER ====================== */
 .header {
   background-color: var(--white-clr);
@@ -136,15 +183,13 @@ body {
 }
 
 .nav__links {
-  position: relative;
-  top: 8%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  margin-top: 10%;
 }
 
 .nav__item {
-  padding-inline: 1.6rem;
+  padding: 1.6rem;
 }
 
 .nav__item > a {
@@ -157,6 +202,18 @@ body {
 
 .nav__item > a:where(:hover, :active) {
   color: var(--secondary-clr);
+}
+
+.nav__cta {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-inline: 1.6rem;
+  margin-top: 24px;
+}
+
+.nav__cta .btn__sign {
+  flex: 1;
 }
 
 .nav__close {
