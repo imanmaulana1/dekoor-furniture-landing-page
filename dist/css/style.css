@@ -76,7 +76,6 @@ body {
 
 /* ====================== REUSABLE CLASS  ====================== */
 .container {
-  max-width: 570px;
   width: 100%;
   margin-inline: auto;
 }
@@ -146,7 +145,7 @@ body {
 }
 
 .nav__item > a {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: var(--fw-500);
 }
 
@@ -158,6 +157,6 @@ body {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 26px;
+  width: 27px;
   background-color: inherit;
 }
