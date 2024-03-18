@@ -4,6 +4,7 @@
   --secondary-clr: #2f241f;
   --text-clr: #553b33;
   --span-clr: #817253;
+  --form-clr: #f5f5f5;
   --footer-clr: #303030;
   /* --footer in large screen: #667085 */
   /* --footer-nav in large screen: #101828 */
@@ -12,7 +13,7 @@
   --white-clr: #ffffff;
   --light-grey-clr: #fcfafa;
 
-  --hover-primary: hsla(72, 66%, 83%, 0.705);
+  --hover-primary: #d8ed78;
   --hover-secondary: hsla(14, 25%, 27%, 0.842);
 
   /* =========== TYPHOGRAPHY =========== */
@@ -58,6 +59,7 @@ a {
 input {
   border: none;
   outline: none;
+  font-family: inherit;
 }
 
 button {
@@ -83,6 +85,24 @@ body {
   margin-inline: auto;
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+}
+
+/* ====================== COMPONENT ====================== */
 .btn__sign {
   padding: 12px 24px;
   background-color: var(--primary-clr);
@@ -130,6 +150,28 @@ body {
   background-color: var(--hover-secondary);
 }
 
+.btn__close {
+  position: absolute;
+  width: 27px;
+  background-color: inherit;
+}
+
+.btn__form {
+  width: 100%;
+  background-color: var(--primary-clr);
+  border-radius: 12px;
+  color: var(--secondary-clr);
+  font-size: 1.6rem;
+  font-weight: var(--fw-500);
+  letter-spacing: -0.01em;
+  padding: 0.8125em 1em;
+  transition: background-color 0.4s ease;
+}
+
+.btn__form:hover {
+  background-color: var(--hover-primary);
+}
+
 /* ====================== HEADER ====================== */
 .header {
   background-color: var(--white-clr);
@@ -170,7 +212,7 @@ body {
   bottom: 0;
   width: 100%;
   background-color: var(--white-clr);
-  z-index: 99;
+  z-index: 998;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -222,4 +264,112 @@ body {
   right: 16px;
   width: 27px;
   background-color: inherit;
+}
+
+/* 
+  ## FORM SIGN IN / LOGIN
+*/
+
+.form-wrapper {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 375px;
+  width: 85%;
+  padding: 2.4rem 1.6rem;
+  background-color: var(--form-clr);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  transform: translateY(-2rem);
+  -webkit-transform: translateY(-2rem);
+  -moz-transform: translateY(-2rem);
+  -ms-transform: translateY(-2rem);
+  -o-transform: translateY(-2rem);
+  transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
+  -moz-transition: transform 0.4s ease;
+  -ms-transition: transform 0.4s ease;
+  -o-transition: transform 0.4s ease;
+}
+
+.form-wrapper .btn__close {
+  top: 10px;
+  right: 10px;
+}
+
+.form__title {
+  font-size: 1.8rem;
+  font-weight: var(--fw-700);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.form__group label {
+  font-size: 1.4rem;
+  color: var(--secondary-clr);
+}
+
+.form__group input {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: var(--secondary-clr);
+  font-size: 1.3rem;
+  line-height: var(--lh-16);
+  letter-spacing: -0.01px;
+  padding: 10px 13px;
+}
+
+.form__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.form__link {
+  color: var(--secondary-clr);
+  font-size: 1.2rem;
+}
+
+.form__link a {
+  font-weight: var(--fw-700);
+  text-decoration: underline;
+}
+
+.overlay .form-wrapper:nth-child(2) .form__cta {
+  gap: 7.8rem;
+}
+
+.overlay .form-wrapper:nth-child(2) .form__title {
+  margin-bottom: 3.5rem;
+}
+
+#form-register.show {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+#form-register.show .form-wrapper {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }

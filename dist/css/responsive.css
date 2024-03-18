@@ -26,11 +26,40 @@
   .nav__close img {
     width: 33px;
   }
+
+  .form-wrapper {
+    max-width: 420px;
+    width: 100%;
+    padding: 2.4rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .container {
     max-width: 960px;
+  }
+
+  .form-wrapper {
+    max-width: 450px;
+    width: 100%;
+    height: 440px;
+  }
+
+  .form__title {
+    font-size: 2.4rem;
+  }
+
+  .form__group label {
+    font-size: 1.7rem;
+  }
+
+  .form__group input {
+    font-size: 1.6rem;
+  }
+
+  .overlay .form-wrapper:nth-child(2) .form__cta {
+    gap: 7rem;
+    margin-top: 4rem;
   }
 }
 
@@ -99,6 +128,10 @@
 
   .nav__cta {
     display: none;
+  }
+
+  .btn__close {
+    width: 33px;
   }
 }
 
