@@ -37,6 +37,8 @@
   --shadow-lg: 0px 10px 20px 0px rgba(0, 0, 0, 0.02);
   --shadow-sidebar: -25px 0px 30px -20px rgba(0, 0, 0, 0.25);
   --shadow-signup: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow-form: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 *,
@@ -88,7 +90,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: hsla(0, 0%, 0%, 0.4);
+  background-color: hsla(0, 0%, 0%, 0.2);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   z-index: 999;
@@ -284,6 +286,7 @@ body {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  box-shadow: var(--shadow-form);
   transform: translateY(-2rem);
   -webkit-transform: translateY(-2rem);
   -moz-transform: translateY(-2rem);
