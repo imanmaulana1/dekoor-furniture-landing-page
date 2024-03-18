@@ -271,32 +271,45 @@ body {
   ## FORM SIGN IN / LOGIN
 */
 
+#form-register.show {
+  opacity: 1;
+  pointer-events: initial;
+}
+
 .form-wrapper {
-  position: absolute;
+  position: relative;
   top: 10%;
-  left: 0;
-  right: 0;
   margin: 0 auto;
   max-width: 375px;
   width: 85%;
-  padding: 2.4rem 1.6rem;
-  background-color: var(--form-clr);
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-  box-shadow: var(--shadow-form);
+  height: 400px;
+  transform-style: preserve-3d;
   transform: translateY(-2rem);
   -webkit-transform: translateY(-2rem);
   -moz-transform: translateY(-2rem);
   -ms-transform: translateY(-2rem);
   -o-transform: translateY(-2rem);
-  transition: transform 0.4s ease;
-  -webkit-transition: transform 0.4s ease;
-  -moz-transition: transform 0.4s ease;
-  -ms-transition: transform 0.4s ease;
-  -o-transition: transform 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+#form-register.show .form-wrapper {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+#form-register.show .form-wrapper.rotate {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }
 
 .form-wrapper .btn__close {
@@ -355,23 +368,34 @@ body {
   text-decoration: underline;
 }
 
-.overlay .form-wrapper:nth-child(2) .form__cta {
+.overlay .form-wrapper .back .form__cta {
   gap: 7.8rem;
 }
 
-.overlay .form-wrapper:nth-child(2) .form__title {
+.overlay .form-wrapper .back .form__title {
   margin-bottom: 3.5rem;
 }
 
-#form-register.show {
-  opacity: 1;
-  pointer-events: initial;
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  padding: 2.4rem 1.6rem;
+  background-color: var(--form-clr);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: var(--shadow-form);
 }
 
-#form-register.show .form-wrapper {
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
+.back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
 }

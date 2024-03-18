@@ -21,8 +21,22 @@ btnSignup.forEach((item) => {
 
 const overlayForm = document.getElementById('form-register');
 
-const formClose = document.querySelector('.btn__close');
-formClose.addEventListener('click', closeModalForm);
+const btnCloseForm = document.querySelectorAll('.btn__close');
+btnCloseForm.forEach((item) => {
+  item.addEventListener('click', closeModalForm);
+});
+
+const login = document.getElementById('login');
+login.addEventListener('click', () => {
+  const formWrapper = document.querySelector('.form-wrapper');
+  formWrapper.classList.add('rotate');
+});
+
+const register = document.getElementById('register');
+register.addEventListener('click', () => {
+  const formWrapper = document.querySelector('.form-wrapper');
+  formWrapper.classList.remove('rotate');
+});
 
 function showModalForm() {
   overlayForm.classList.add('show');

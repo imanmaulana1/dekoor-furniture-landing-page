@@ -30,6 +30,10 @@
   .form-wrapper {
     max-width: 420px;
     width: 100%;
+  }
+
+  .front,
+  .back {
     padding: 2.4rem;
   }
 }
@@ -57,7 +61,11 @@
     font-size: 1.6rem;
   }
 
-  .overlay .form-wrapper:nth-child(2) .form__cta {
+  .form__link {
+    font-size: 1.4rem;
+  }
+
+  .overlay .form-wrapper .back .form__cta {
     gap: 7rem;
     margin-top: 4rem;
   }

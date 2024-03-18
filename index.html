@@ -60,7 +60,7 @@
       </div>
       <div class="overlay" id="form-register">
         <div class="form-wrapper">
-          <form>
+          <form class="front">
             <h2 class="form__title">Register</h2>
             <div class="form__group">
               <label for="username-signup">Username</label>
@@ -91,19 +91,44 @@
             </div>
             <div class="form__cta">
               <p class="form__link">
-                Already have an account? <a href="#">Login</a>
+                Already have an account? <a href="#" id="login">Login</a>
               </p>
               <button type="button" class="btn__form">Sign Up</button>
             </div>
+            <button type="button" class="btn__close">
+              <img src="./assets/icons/close.svg" alt="close" />
+            </button>
           </form>
-          <button class="btn__close">
-            <img src="./assets/icons/close.svg" alt="close" />
-          </button>
+          <form class="back">
+            <h2 class="form__title">Login</h2>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input type="email" name="email" placeholder="Enter your email" />
+            </div>
+            <div class="form__group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div class="form__cta">
+              <p class="form__link">
+                Don't have an account yet?
+                <a href="#" id="register">Register</a>
+              </p>
+              <button type="button" class="btn__form">Sign In</button>
+            </div>
+            <button type="button" class="btn__close">
+              <img src="./assets/icons/close.svg" alt="close" />
+            </button>
+          </form>
         </div>
 
         <!-- This is Login Form -->
-        <!-- <div class="form-wrapper">
-          <form>
+        <!-- <div class="form-wrapper" id="back">
+          <form class="back">
             <h2 class="form__title">Login</h2>
             <div class="form__group">
               <label for="email">Email</label>
