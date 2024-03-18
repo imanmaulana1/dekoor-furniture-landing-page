@@ -88,7 +88,6 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  width: 100%;
   background-color: hsla(0, 0%, 0%, 0.4);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
