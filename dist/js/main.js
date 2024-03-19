@@ -16,10 +16,12 @@ function closeHamburgerMenu() {
 
 function flipModalInput() {
   getClass(formWrapper, 'rotate');
+  resetMyForm(formRegister);
 }
 
 function unFlipModalInput() {
   removeClass(formWrapper, 'rotate');
+  resetMyForm(formLogin);
 }
 
 function showModalInput() {
@@ -47,10 +49,16 @@ function showToast() {
   }, 5000);
 }
 
+function resetMyForm(form) {
+  form.reset();
+}
+
 const navbar = document.querySelector('.navbar'),
   formWrapper = document.querySelector('.form-wrapper'),
   overlayForm = document.getElementById('form-register'),
-  toastBox = document.getElementById('toast-wrapper');
+  toastBox = document.getElementById('toast-wrapper'),
+  formRegister = document.querySelector('.front'),
+  formLogin = document.querySelector('.back');
 
 const btnHamburger = document.getElementById('btn-hamburger');
 btnHamburger.addEventListener('click', showHamburgerMenu);
@@ -72,8 +80,12 @@ btnSignup.forEach((item) => {
 });
 
 const btnCloseForm = document.querySelectorAll('.btn__close');
-btnCloseForm.forEach((item) => {
-  item.addEventListener('click', closeModalInput);
+btnCloseForm.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    closeModalInput();
+
+    index == 0 ? resetMyForm(formRegister) : resetMyForm(formLogin);
+  });
 });
 
 const login = document.getElementById('login');
