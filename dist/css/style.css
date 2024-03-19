@@ -363,9 +363,10 @@ body {
   font-size: 1.2rem;
 }
 
-.form__link a {
+.form__link span {
   font-weight: var(--fw-700);
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .overlay .form-wrapper .back .form__cta {
