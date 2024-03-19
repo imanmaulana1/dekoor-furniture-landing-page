@@ -7,34 +7,32 @@ function removeClass(element, className) {
 }
 
 function showHamburgerMenu() {
-  const navbar = document.querySelector('.navbar');
   getClass(navbar, 'show');
 }
 
 function closeHamburgerMenu() {
-  const navbar = document.querySelector('.navbar');
   removeClass(navbar, 'show');
 }
 
 function flipModalInput() {
-  const formWrapper = document.querySelector('.form-wrapper');
   getClass(formWrapper, 'rotate');
 }
 
 function unFlipModalInput() {
-  const formWrapper = document.querySelector('.form-wrapper');
   removeClass(formWrapper, 'rotate');
 }
 
 function showModalInput() {
-  const overlayForm = document.getElementById('form-register');
   getClass(overlayForm, 'show');
 }
 
 function closeModalInput() {
-  const overlayForm = document.getElementById('form-register');
   removeClass(overlayForm, 'show');
 }
+
+const navbar = document.querySelector('.navbar');
+const formWrapper = document.querySelector('.form-wrapper');
+const overlayForm = document.getElementById('form-register');
 
 const btnHamburger = document.getElementById('btn-hamburger');
 btnHamburger.addEventListener('click', showHamburgerMenu);
