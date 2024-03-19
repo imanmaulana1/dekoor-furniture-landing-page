@@ -30,9 +30,27 @@ function closeModalInput() {
   removeClass(overlayForm, 'show');
 }
 
-const navbar = document.querySelector('.navbar');
-const formWrapper = document.querySelector('.form-wrapper');
-const overlayForm = document.getElementById('form-register');
+function showToast() {
+  getClass(toastBox, 'show');
+  closeHamburgerMenu();
+
+  let toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.innerHTML =
+    '<i class="fa-solid fa-circle-exclamation"></i> To access this feature, you need to log in to your account first.';
+
+  toastBox.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+    removeClass(toastBox, 'show');
+  }, 5000);
+}
+
+const navbar = document.querySelector('.navbar'),
+  formWrapper = document.querySelector('.form-wrapper'),
+  overlayForm = document.getElementById('form-register'),
+  toastBox = document.getElementById('toast-wrapper');
 
 const btnHamburger = document.getElementById('btn-hamburger');
 btnHamburger.addEventListener('click', showHamburgerMenu);
@@ -63,3 +81,10 @@ login.addEventListener('click', flipModalInput);
 
 const register = document.getElementById('register');
 register.addEventListener('click', unFlipModalInput);
+
+const btnCart = document.querySelectorAll('.btn__cart');
+btnCart.forEach((item) => {
+  item.addEventListener('click', () => {
+    showToast();
+  });
+});
