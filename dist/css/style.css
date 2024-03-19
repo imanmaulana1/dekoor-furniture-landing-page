@@ -431,7 +431,7 @@ body {
 }
 
 .toast i {
-  color: rgb(224, 88, 88);
+  color: rgb(224, 181, 88);
 }
 
 .toast::after {
@@ -441,7 +441,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 5px;
-  background-color: rgb(224, 88, 88);
+  background-color: rgb(224, 181, 88);
   animation: loading 5s linear forwards;
   -webkit-animation: loading 5s linear forwards;
 }
