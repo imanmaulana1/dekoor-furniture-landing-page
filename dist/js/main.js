@@ -84,7 +84,8 @@ btnCloseForm.forEach((item, index) => {
   item.addEventListener('click', () => {
     closeModalInput();
 
-    index == 0 ? resetMyForm(formRegister) : resetMyForm(formLogin);
+    index == 0 ? resetMyForm(formRegister) : unFlipModalInput(),
+      resetMyForm(formLogin);
   });
 });
 
