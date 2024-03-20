@@ -76,6 +76,10 @@
     max-width: 1140px;
   }
 
+  .container-lg{
+    max-width: 1440px;
+  }
+
   .header {
     box-shadow: var(--shadow-lg);
   }

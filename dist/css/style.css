@@ -87,6 +87,12 @@ body {
   margin-inline: auto;
 }
 
+.container-lg {
+  max-width: 1440px;
+  width: 100%;
+  margin-inline: auto;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -301,11 +307,11 @@ body {
 }
 
 #form-register.show .form-wrapper.rotate {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg) perspective(1000px);
+  -webkit-transform: rotateY(180deg) perspective(1000px);
+  -moz-transform: rotateY(180deg) perspective(1000px);
+  -ms-transform: rotateY(180deg) perspective(1000px);
+  -o-transform: rotateY(180deg) perspective(1000px);
 }
 
 .form-wrapper .btn__close {
@@ -352,6 +358,11 @@ body {
   align-items: flex-end;
   gap: 2rem;
   margin-top: 2rem;
+}
+
+.form__cta button {
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
 }
 
 .form__link {
