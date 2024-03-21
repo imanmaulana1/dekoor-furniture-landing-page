@@ -462,3 +462,75 @@ body {
     width: 0;
   }
 }
+
+/* ====================== HERO ====================== */
+
+.hero__content .container {
+  padding: 3.2rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero__lead {
+  color: var(--secondary-clr);
+  text-align: center;
+  font: normal var(--fw-700) 3.2rem / var(--lh-48) var(--font-inter);
+  line-height: var(--lh-48);
+  letter-spacing: -0.32px;
+}
+
+.hero__lead span {
+  color: var(--span-clr);
+}
+
+.hero__cta {
+  width: 282px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero__btn {
+  color: var(--text-clr);
+  font: normal var(--fw-400) 1.4rem / var(--lh-20) var(--font-inter);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 1.6rem 2.4rem;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+.hero__btn:first-child {
+  background-color: var(--primary-clr);
+}
+
+.hero__btn:last-child {
+  background-color: var(--white-clr);
+  border: 1px solid var(--text-clr);
+}
+
+.hero__btn:first-child:hover {
+  background-color: var(--hover-primary);
+}
+
+.hero__btn:last-child:hover {
+  background-color: wheat;
+}
+
+#product {
+  background: url('../../assets/images/bg-mobile.svg') no-repeat center / cover;
+  aspect-ratio: 16 / 9;
+}

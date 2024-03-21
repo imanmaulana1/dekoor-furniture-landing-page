@@ -36,6 +36,14 @@
   .back {
     padding: 2.4rem;
   }
+
+  .hero__lead {
+    font-size: 3.6rem;
+  }
+
+  .hero__cta {
+    width: 350px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -69,6 +77,14 @@
     gap: 7rem;
     margin-top: 4rem;
   }
+
+  .hero__lead {
+    font-size: 3.8rem;
+  }
+
+  .hero__cta {
+    width: 400px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -76,7 +92,7 @@
     max-width: 1140px;
   }
 
-  .container-lg{
+  .container-lg {
     max-width: 1440px;
   }
 
