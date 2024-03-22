@@ -44,6 +44,30 @@
   .hero__cta {
     width: 350px;
   }
+
+  .hero__content .container {
+    padding-block: 4rem;
+  }
+
+  .price__tag {
+    font-size: 2.4rem;
+    line-height: var(--lh-36);
+  }
+
+  .product__label {
+    font-size: 2.4rem;
+    line-height: var(--lh-36);
+  }
+
+  .product__name {
+    margin-bottom: 8px;
+  }
+
+  .product__cta {
+    padding: 1.6rem 2.4rem;
+    font-size: 1.6rem;
+    line-height: var(--lh-24);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -84,6 +108,16 @@
 
   .hero__cta {
     width: 400px;
+  }
+
+  #product .container {
+    height: 100%;
+    padding: 0 0 6rem 4.8rem;
+  }
+
+  .product__name {
+    font-size: 5.2rem;
+    line-height: normal;
   }
 }
 
@@ -157,10 +191,84 @@
   .nav__cta {
     display: none;
   }
+
+  #hero .container-lg {
+    flex-direction: row;
+    gap: 6.4rem;
+  }
+
+  .hero__content {
+    width: 62%;
+  }
+
+  .hero__content .container {
+    padding: 0 0 0 10rem;
+    gap: 4.8rem;
+  }
+
+  .hero__lead {
+    text-align: start;
+    font: normal var(--fw-800) 6.7rem / normal var(--font-inter);
+    letter-spacing: -0.72px;
+  }
+
+  .hero__cta {
+    width: 100%;
+    align-self: stretch;
+    flex-direction: row;
+    gap: 2.4rem;
+  }
+
+  .hero__btn {
+    flex: 1;
+    font: var(--fw-400) 2.4rem / var(--lh-36) var(--font-inter);
+    padding: 2.2rem 1rem;
+  }
+
+  #product {
+    background: url('../../assets/images/bg-desktop.svg') no-repeat center /
+      cover;
+    width: 38%;
+    aspect-ratio: 3 / 4;
+  }
+
+  #product .container {
+    justify-content: flex-end;
+  }
+
+  .product__label {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1366px) {
   .container {
     max-width: 1240px;
+  }
+
+  .hero__content .container {
+    padding-left: 14.2rem;
+  }
+
+  .hero__lead {
+    font-size: 7.2rem;
+  }
+
+  #product .container {
+    padding-bottom: 6.7rem;
+  }
+
+  .product__name {
+    font-size: 5.6rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #product .container {
+    padding-bottom: 8.7rem;
+  }
+
+  .product__name {
+    font-size: 6.4rem;
   }
 }
