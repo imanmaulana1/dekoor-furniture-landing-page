@@ -37,6 +37,16 @@ function handleModalInput() {
   removeClass(overlayForm, 'show');
 }
 
+function handleModalSearchCatalog() {
+  const catalogWrapper = document.getElementById('search-catalog-wrapper');
+
+  if (!catalogWrapper.classList.contains('show')) {
+    return getClass(catalogWrapper, 'show');
+  }
+
+  removeClass(catalogWrapper, 'show');
+}
+
 function showToastNotification() {
   const toastBox = document.getElementById('toast-wrapper');
 
@@ -122,5 +132,11 @@ btnCarts.forEach((btnCart) => {
 const btnVideo = document.querySelector('.btn__video');
 btnVideo.addEventListener('click', showVideo);
 
-const btnCloseVideo = document.querySelector('.btn__close__video');
+const btnCloseVideo = document.getElementById('btn-close-video');
 btnCloseVideo.addEventListener('click', showVideo);
+
+const btnSearchCatalog = document.querySelector('.btn__catalog');
+btnSearchCatalog.addEventListener('click', handleModalSearchCatalog);
+
+const btnCloseSearchCatalog = document.getElementById('btn-close-catalog');
+btnCloseSearchCatalog.addEventListener('click', handleModalSearchCatalog);

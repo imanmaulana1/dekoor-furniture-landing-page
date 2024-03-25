@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preload" as="image" href="./assets/images/logo.svg" />
-    <link rel="preload" as="image" href="./assets/images/bg-desktop.svg" />
-    <link rel="preload" as="image" href="./assets/images/bg-mobile.svg" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/bg-desktop.svg"
+      media="(min-width: 1200px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/bg-mobile.svg"
+      media="(max-width: 1028px)"
+    />
 
     <!-- Favicon -->
     <link
@@ -156,7 +166,7 @@
                 The kind of <span>furniture</span> you have been looking for
               </h1>
               <div class="hero__cta">
-                <button class="hero__btn">
+                <button class="hero__btn btn__catalog">
                   <img src="./assets/icons/search.svg" alt="search product" />
                   Search Catalog
                 </button>
@@ -190,7 +200,29 @@
         <div class="overlay" id="video-wrapper">
           <div class="container">
             <video src="/assets/videos/ads.mp4" id="video" controls></video>
-            <button class="btn__close__video">
+            <button class="btn__close__overlay" id="btn-close-video">
+              <img
+                src="./assets/icons/close-circle-fill.svg"
+                alt="icon close"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="overlay" id="search-catalog-wrapper">
+          <div class="container">
+            <div class="input__catalog__wrapper">
+              <input
+                type="text"
+                name="searchCatalog"
+                id="searchCatalog"
+                placeholder="What are you looking for?"
+                class="input__catalog"
+              />
+              <button type="button" class="btn__search">
+                <img src="/assets/icons/search.svg" alt="search-icon" />
+              </button>
+            </div>
+            <button class="btn__close__overlay" id="btn-close-catalog">
               <img
                 src="./assets/icons/close-circle-fill.svg"
                 alt="icon close"
