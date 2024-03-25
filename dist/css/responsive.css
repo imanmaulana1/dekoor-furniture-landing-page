@@ -143,6 +143,10 @@
     max-width: 1440px;
   }
 
+  .section__title {
+    font: normal var(--fw-400) 2.4rem / var(--lh-36) var(--font-inter);
+  }
+
   .header {
     box-shadow: var(--shadow-lg);
   }
@@ -283,6 +287,33 @@
     width: 80px;
     background-color: var(--primary-clr);
   }
+
+  #why-choose-us .container {
+    padding: 7.2rem 2.4rem;
+    gap: 40px;
+  }
+
+  .why__choose__us__lead {
+    font-size: 5.9rem;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  .why__choose__us__features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+  }
+
+  .feature {
+    gap: 8px;
+  }
+
+  .feature__text {
+    font-size: 2.2rem;
+    line-height: var(--lh-28);
+  }
 }
 
 @media screen and (min-width: 1366px) {
@@ -304,6 +335,15 @@
 
   .product__name {
     font-size: 5.6rem;
+  }
+
+  .why__choose__us__lead {
+    font-size: 6.4rem;
+  }
+
+  .feature__text {
+    font-size: 2.4rem;
+    line-height: var(--lh-36);
   }
 }
 

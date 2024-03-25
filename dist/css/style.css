@@ -117,6 +117,10 @@ body {
   pointer-events: none;
 }
 
+.section__title {
+  font: normal var(--fw-400) 1.4rem / var(--lh-20) var(--font-inter);
+}
+
 /* ====================== COMPONENT ====================== */
 .btn__sign {
   padding: 12px 24px;
@@ -714,4 +718,72 @@ body {
 
 .btn__search:active {
   background-color: var(--primary-clr);
+}
+
+/* ====================== WHY CHOOSE US ====================== */
+#why-choose-us {
+  background-color: var(--secondary-clr);
+}
+
+#why-choose-us .container {
+  padding: 3.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+#why-choose-us .container .section__title {
+  color: var(--primary-clr);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.why__choose__us__lead {
+  color: var(--primary-clr);
+  text-align: center;
+  font: normal var(--fw-700) 2.4rem / var(--lh-36) var(--font-inter);
+  letter-spacing: -0.24px;
+  margin-bottom: 8px;
+}
+
+.why__choose__us__features {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature__icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(229, 240, 182, 0.5);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.feature:nth-child(2) .feature__icon span {
+  color: var(--white-clr);
+  text-align: center;
+  font: normal var(--fw-700) 2.4rem / var(--lh-36) var(--font-inter);
+  padding-inline: 4px;
+}
+
+.feature__text {
+  color: var(--primary-clr);
+  font: normal var(--fw-700) 1.5rem / var(--lh-24) var(--font-inter);
+  text-transform: uppercase;
 }
