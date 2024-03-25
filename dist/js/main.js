@@ -6,35 +6,42 @@ function removeClass(element, className) {
   return element.classList.remove(className);
 }
 
-function showHamburgerMenu() {
-  getClass(navbar, 'show');
-}
+function handleHamburgerMenu() {
+  const navbar = document.querySelector('.navbar');
 
-function closeHamburgerMenu() {
+  if (!navbar.classList.contains('show')) {
+    return getClass(navbar, 'show');
+  }
+
   removeClass(navbar, 'show');
 }
 
 function flipModalInput() {
-  getClass(formWrapper, 'rotate');
-  resetMyForm(formRegister);
-}
+  const formWrapper = document.querySelector('.form-wrapper');
 
-function unFlipModalInput() {
+  if (!formWrapper.classList.contains('rotate')) {
+    return getClass(formWrapper, 'rotate'), resetMyForm(formRegister);
+  }
+
   removeClass(formWrapper, 'rotate');
   resetMyForm(formLogin);
 }
 
-function showModalInput() {
-  getClass(overlayForm, 'show');
-}
+function handleModalInput() {
+  const overlayForm = document.getElementById('form-register');
 
-function closeModalInput() {
+  if (!overlayForm.classList.contains('show')) {
+    return getClass(overlayForm, 'show');
+  }
+
   removeClass(overlayForm, 'show');
 }
 
-function showToast() {
+function showToastNotification() {
+  const toastBox = document.getElementById('toast-wrapper');
+
   getClass(toastBox, 'show');
-  closeHamburgerMenu();
+  handleHamburgerMenu();
 
   let toast = document.createElement('div');
   toast.classList.add('toast');
@@ -49,43 +56,55 @@ function showToast() {
   }, 5000);
 }
 
+function showVideo() {
+  const videoWrapper = document.getElementById('video-wrapper');
+
+  if (!videoWrapper.classList.contains('show')) {
+    return getClass(videoWrapper, 'show');
+  }
+
+  removeClass(videoWrapper, 'show');
+  stopVideo();
+}
+
+function stopVideo() {
+  const videoPlayer = document.getElementById('video');
+  videoPlayer.pause();
+  videoPlayer.currentTime = 0;
+}
+
 function resetMyForm(form) {
   form.reset();
 }
 
-const navbar = document.querySelector('.navbar'),
-  formWrapper = document.querySelector('.form-wrapper'),
-  overlayForm = document.getElementById('form-register'),
-  toastBox = document.getElementById('toast-wrapper'),
-  formRegister = document.querySelector('.front'),
+const formRegister = document.querySelector('.front'),
   formLogin = document.querySelector('.back');
 
 const btnHamburger = document.getElementById('btn-hamburger');
-btnHamburger.addEventListener('click', showHamburgerMenu);
+btnHamburger.addEventListener('click', handleHamburgerMenu);
 
 const navClose = document.querySelector('.nav__close');
-navClose.addEventListener('click', closeHamburgerMenu);
+navClose.addEventListener('click', handleHamburgerMenu);
 
-const navItems = document.querySelectorAll('.nav__item');
-navItems.forEach((item) => {
-  item.addEventListener('click', closeHamburgerMenu);
+const navLinks = document.querySelectorAll('.nav__item');
+navLinks.forEach((navLink) => {
+  navLink.addEventListener('click', handleHamburgerMenu);
 });
 
-const btnSignup = document.querySelectorAll('.btn__sign');
-btnSignup.forEach((item) => {
-  item.addEventListener('click', () => {
-    closeHamburgerMenu();
-    showModalInput();
-  });
+const btnSignups = document.querySelectorAll('.btn__sign');
+btnSignups.forEach((btnSignup) => {
+  btnSignup.addEventListener('click', handleModalInput);
 });
 
-const btnCloseForm = document.querySelectorAll('.btn__close');
-btnCloseForm.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    closeModalInput();
+const btnCloseForms = document.querySelectorAll('.btn__close');
+btnCloseForms.forEach((btnCloseForm, index) => {
+  btnCloseForm.addEventListener('click', () => {
+    handleModalInput();
 
-    index == 0 ? resetMyForm(formRegister) : unFlipModalInput(),
-      resetMyForm(formLogin);
+    index == 1 ? flipModalInput() : '';
+
+    resetMyForm(formLogin);
+    resetMyForm(formRegister);
   });
 });
 
@@ -93,11 +112,15 @@ const login = document.getElementById('login');
 login.addEventListener('click', flipModalInput);
 
 const register = document.getElementById('register');
-register.addEventListener('click', unFlipModalInput);
+register.addEventListener('click', flipModalInput);
 
-const btnCart = document.querySelectorAll('.btn__cart');
-btnCart.forEach((item) => {
-  item.addEventListener('click', () => {
-    showToast();
-  });
+const btnCarts = document.querySelectorAll('.btn__cart');
+btnCarts.forEach((btnCart) => {
+  btnCart.addEventListener('click', showToastNotification);
 });
+
+const btnVideo = document.querySelector('.btn__video');
+btnVideo.addEventListener('click', showVideo);
+
+const btnCloseVideo = document.querySelector('.btn__close__video');
+btnCloseVideo.addEventListener('click', showVideo);

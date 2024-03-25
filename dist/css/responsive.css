@@ -68,6 +68,12 @@
     font-size: 1.6rem;
     line-height: var(--lh-24);
   }
+
+  #video-wrapper.show .container .btn__close__video {
+    top: 2%;
+    right: 8%;
+    width: 45px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -238,6 +244,16 @@
 
   .product__label {
     display: none;
+  }
+
+  #video-wrapper .container #video {
+    width: 80%;
+  }
+
+  #video-wrapper.show .container .btn__close__video {
+    top: 3%;
+    left: 50%;
+    right: 50%;
   }
 }
 
