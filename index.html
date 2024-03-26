@@ -57,7 +57,7 @@
         <nav class="navbar">
           <ul class="nav__links">
             <li class="nav__item"><a href="#why-choose-us">About Us</a></li>
-            <li class="nav__item"><a href="#">Furniture</a></li>
+            <li class="nav__item"><a href="#categories">Furniture</a></li>
             <li class="nav__item"><a href="#partners">Partnership</a></li>
             <li class="nav__item"><a href="#">Contact</a></li>
           </ul>
@@ -210,7 +210,7 @@
         </div>
         <div class="overlay" id="search-catalog-wrapper">
           <div class="container">
-            <div class="input__catalog__wrapper">
+            <form class="input__catalog__wrapper" id="search-catalog">
               <input
                 type="text"
                 name="searchCatalog"
@@ -221,7 +221,8 @@
               <button type="button" class="btn__search">
                 <img src="/assets/icons/search.svg" alt="search-icon" />
               </button>
-            </div>
+            </form>
+
             <button class="btn__close__overlay" id="btn-close-catalog">
               <img
                 src="./assets/icons/close-circle-fill.svg"
@@ -292,6 +293,43 @@
               alt="company 4 logo"
               width="57"
             />
+          </div>
+        </div>
+      </section>
+      <section id="categories">
+        <div class="container">
+          <div class="categories__detail">
+            <div class="categories__title">
+              <h2 class="section__title">Categories</h2>
+              <p class="categories__lead">Furniture Sets Recommendations</p>
+            </div>
+            <div class="categories__desc"></div>
+          </div>
+          <div class="categories__img">
+            <div class="category__img">
+              <img
+                src="./assets/images/set-room-1.svg"
+                alt="category 1"
+                width="103"
+                class="cat__img"
+              />
+            </div>
+            <div class="category__img">
+              <img
+                src="./assets/images/set-room-2.svg"
+                alt="category 2"
+                width="103"
+                class="cat__img"
+              />
+            </div>
+            <div class="category__img active">
+              <img
+                src="./assets/images/set-room-3.svg"
+                alt="category 3"
+                width="103"
+                class="cat__img"
+              />
+            </div>
           </div>
         </div>
       </section>

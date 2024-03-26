@@ -87,8 +87,24 @@ function resetMyForm(form) {
   form.reset();
 }
 
+function removeUnselectedImage(idx) {
+  const selectedImage = getImageCategories();
+  selectedImage.forEach((selected, id) => {
+    if (id !== idx) {
+      selected.classList.remove('active');
+    }
+  });
+}
+
+function getImageCategories() {
+  const imageCategories = document.querySelectorAll('.category__img');
+
+  return imageCategories;
+}
+
 const formRegister = document.querySelector('.front'),
-  formLogin = document.querySelector('.back');
+  formLogin = document.querySelector('.back'),
+  formSearchCatalog = document.getElementById('search-catalog');
 
 const btnHamburger = document.getElementById('btn-hamburger');
 btnHamburger.addEventListener('click', handleHamburgerMenu);
@@ -139,4 +155,15 @@ const btnSearchCatalog = document.querySelector('.btn__catalog');
 btnSearchCatalog.addEventListener('click', handleModalSearchCatalog);
 
 const btnCloseSearchCatalog = document.getElementById('btn-close-catalog');
-btnCloseSearchCatalog.addEventListener('click', handleModalSearchCatalog);
+btnCloseSearchCatalog.addEventListener('click', () => {
+  handleModalSearchCatalog();
+  resetMyForm(formSearchCatalog);
+});
+
+const imageCategories = getImageCategories();
+imageCategories.forEach((imageCategory, idx) => {
+  imageCategory.addEventListener('click', () => {
+    getClass(imageCategory, 'active');
+    removeUnselectedImage(idx);
+  });
+});
