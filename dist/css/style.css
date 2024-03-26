@@ -872,6 +872,7 @@ body {
   align-self: stretch;
   height: 132px;
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 
