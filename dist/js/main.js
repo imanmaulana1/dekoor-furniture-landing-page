@@ -87,19 +87,16 @@ function resetMyForm(form) {
   form.reset();
 }
 
-function removeUnselectedImage(idx) {
-  const selectedImage = getImageCategories();
-  selectedImage.forEach((selected, id) => {
-    if (id !== idx) {
-      selected.classList.remove('active');
-    }
-  });
-}
-
 function getImageCategories() {
   const imageCategories = document.querySelectorAll('.category__img');
 
   return imageCategories;
+}
+
+function getAccordionItems() {
+  const accordionItems = document.querySelectorAll('.accordion__item');
+
+  return accordionItems;
 }
 
 const formRegister = document.querySelector('.front'),
@@ -161,9 +158,31 @@ btnCloseSearchCatalog.addEventListener('click', () => {
 });
 
 const imageCategories = getImageCategories();
-imageCategories.forEach((imageCategory, idx) => {
-  imageCategory.addEventListener('click', () => {
-    getClass(imageCategory, 'active');
-    removeUnselectedImage(idx);
+imageCategories.forEach((imageCategorySelected) => {
+  imageCategorySelected.addEventListener('click', () => {
+    const images = getImageCategories();
+    images.forEach((image) => {
+      removeClass(image, 'active');
+    });
+
+    getClass(imageCategorySelected, 'active');
+  });
+});
+
+const accordions = getAccordionItems();
+accordions.forEach((accordionSelected) => {
+  accordionSelected.addEventListener('click', () => {
+    const accordionItems = getAccordionItems();
+    accordionItems.forEach((accordion) => {
+      const accordionDesc = accordion.querySelector('.accordion__desc');
+      accordionDesc.style.maxHeight = null;
+
+      removeClass(accordion, 'active');
+    });
+
+    getClass(accordionSelected, 'active');
+
+    const accordionDesc = accordionSelected.querySelector('.accordion__desc');
+    accordionDesc.style.maxHeight = `${accordionDesc.scrollHeight}px`;
   });
 });

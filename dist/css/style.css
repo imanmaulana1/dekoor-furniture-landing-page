@@ -851,7 +851,7 @@ body {
 }
 
 .categories__detail .categories__title .section__title {
-  color: #2f241f;
+  color: var(--secondary-clr);
   text-align: center;
   letter-spacing: -0.14px;
   margin-bottom: 8px;
@@ -864,8 +864,49 @@ body {
   letter-spacing: -0.18px;
 }
 
-.categories__desc {
-  outline: 1px solid blue;
+.categories__accordion {
+  display: flex;
+  flex-direction: column;
+  height: 307px;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.6rem;
+  background-color: var(--light-grey-clr);
+  cursor: pointer;
+}
+
+.accordion__item:hover {
+  background-color: #f5f5f5;
+}
+
+.accordion__item.active {
+  background-color: var(--primary-clr);
+  gap: 12px;
+}
+
+.accordion__title {
+  color: var(--black-clr);
+  font: normal var(--fw-700) 1.8rem / normal var(--font-inter);
+  letter-spacing: -0.18px;
+}
+
+.accordion__desc {
+  color: var(--black-clr);
+  font: normal var(--fw-400) 1.4rem / var(--lh-20) var(--font-inter);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  -moz-transition: max-height 0.2s ease-in-out;
+  -ms-transition: max-height 0.2s ease-in-out;
+  -o-transition: max-height 0.2s ease-in-out;
+}
+
+.accordion__item.active .accordion__desc {
+  max-height: 200px;
 }
 
 .categories__img {
