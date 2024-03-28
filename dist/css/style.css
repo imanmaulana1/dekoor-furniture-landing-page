@@ -982,7 +982,7 @@ body {
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   color: var(--secondary-clr);
-  font: normal var(--fw-400) 1.6rem / var(--lh-24) var(--font-inter);
+  font: normal var(--fw-400) 1.2rem / var(--lh-16) var(--font-inter);
   text-transform: uppercase;
 }
 
