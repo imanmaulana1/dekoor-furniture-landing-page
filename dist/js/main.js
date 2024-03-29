@@ -47,16 +47,44 @@ function handleModalSearchCatalog() {
   removeClass(catalogWrapper, 'show');
 }
 
-function showToastNotification() {
+function showToastNotification(msg, status) {
   const toastBox = document.getElementById('toast-wrapper');
 
   getClass(toastBox, 'show');
-  handleHamburgerMenu();
+
+  let message;
 
   let toast = document.createElement('div');
   toast.classList.add('toast');
-  toast.innerHTML =
-    '<i class="fa-solid fa-circle-exclamation"></i> To access this feature, you need to log in to your account first.';
+
+  // Change variable color toast & message
+  switch (status) {
+    case 'info':
+      message = `<i class="fa-solid fa-circle-exclamation"></i> ${msg}`;
+      document.documentElement.style.setProperty(
+        '--toast-clr',
+        'rgb(224, 181, 88)'
+      );
+      break;
+    case 'danger':
+      message = `<i class="fa-solid fa-xmark"></i> ${msg}`;
+      document.documentElement.style.setProperty(
+        '--toast-clr',
+        'rgb(224, 88, 88)'
+      );
+      break;
+    case 'success':
+      message = `<i class="fa-solid fa-check"></i> ${msg}`;
+      document.documentElement.style.setProperty(
+        '--toast-clr',
+        'rgb(78, 187, 78)'
+      );
+      break;
+    default:
+      break;
+  }
+
+  toast.innerHTML = message;
 
   toastBox.appendChild(toast);
 
@@ -137,6 +165,12 @@ function moveToPrevSlide() {
   });
 }
 
+function validateEmail(email) {
+  const re =
+    /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+  return re.test(email);
+}
+
 const registerForm = document.querySelector('.front'),
   loginForm = document.querySelector('.back'),
   searchCatalogForm = document.getElementById('search-catalog');
@@ -177,7 +211,13 @@ register.addEventListener('click', flipModalInput);
 
 const cartBtns = document.querySelectorAll('.btn__cart');
 cartBtns.forEach((cartBtn) => {
-  cartBtn.addEventListener('click', showToastNotification);
+  cartBtn.addEventListener('click', () => {
+    showToastNotification(
+      'To access this feature, you need to log in to your account first.',
+      'info'
+    );
+    handleHamburgerMenu();
+  });
 });
 
 const videoBtn = document.querySelector('.btn__video');
@@ -236,3 +276,19 @@ prevBtn.addEventListener('click', moveToPrevSlide);
 
 const nextBtn = document.getElementById('btn-next');
 nextBtn.addEventListener('click', moveToNextSlide);
+
+const newsletterBtn = document.getElementById('btn-mail');
+newsletterBtn.addEventListener('click', () => {
+  const email = document.getElementById('newsletter-input').value;
+
+  if (!validateEmail(email))
+    return showToastNotification(
+      'Invalid email format. Please enter a valid email address.',
+      'danger'
+    );
+
+  showToastNotification(
+    'Congratulations on becoming a member! Get ready to shop smart and get the deals!',
+    'success'
+  );
+});
