@@ -24,6 +24,7 @@
   --fw-800: 800;
 
   --font-inter: 'Inter', sans-serif;
+  --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
 
   --lh-16: 16px;
   --lh-20: 20px;
@@ -1166,4 +1167,70 @@ body {
 .btn__mail img {
   width: 16px;
   height: 16px;
+}
+
+/* ====================== FOOTER ====================== */
+
+footer .container {
+  padding: 3.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer__logo {
+  width: 91;
+  height: 27;
+}
+
+.footer__text {
+  color: var(--footer-clr);
+  font: normal var(--fw-400) 1.2rem / var(--lh-24) var(--font-jakarta-sans);
+  text-align: center;
+}
+
+.nav__secondary {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 107px;
+  row-gap: 35px;
+}
+
+.nav__links__wrapper {
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.nav__title {
+  color: var(--footer-clr);
+  font: normal var(--fw-500) 1.4rem / normal var(--font-jakarta-sans);
+  text-align: center;
+}
+
+.nav__secondary__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav__secondary__links .nav__secondary__item a {
+  color: var(--footer-clr);
+  font: normal var(--fw-400) 1.2rem / normal var(--font-jakarta-sans);
+}
+
+.footer__copyright__mobile{
+  color: var(--footer-clr);
+  font: normal var(--fw-400) 1rem / normal var(--font-jakarta-sans);
 }
