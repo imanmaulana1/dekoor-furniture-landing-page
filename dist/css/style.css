@@ -1183,6 +1183,7 @@ body {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
+  overflow: hidden;
 }
 
 .newsletter__mail input {
