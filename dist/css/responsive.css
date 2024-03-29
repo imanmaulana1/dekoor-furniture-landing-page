@@ -624,6 +624,7 @@
   }
 
   .footer__copyright {
+    display: block;
     color: var(--footer-clr);
     font: normal var(--fw-400) 1.6rem / normal var(--font-jakarta-sans);
   }

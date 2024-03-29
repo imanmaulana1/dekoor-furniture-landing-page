@@ -111,21 +111,11 @@ body {
   -o-transition: opacity 0.4s ease;
 }
 
-.btn__close__overlay {
-  width: 38px;
-  position: absolute;
-  top: 3%;
-  right: 4%;
-  background-color: inherit;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .section__title {
   font: normal var(--fw-400) 1.4rem / var(--lh-20) var(--font-inter);
 }
 
-/* ====================== COMPONENT ====================== */
+/* ====================== COMPONENT BUTTONS ====================== */
 .btn__sign {
   padding: 12px 24px;
   background-color: var(--primary-clr);
@@ -183,6 +173,16 @@ body {
   background-color: inherit;
 }
 
+.btn__close__overlay {
+  width: 38px;
+  position: absolute;
+  top: 3%;
+  right: 4%;
+  background-color: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .btn__form {
   width: 100%;
   background-color: var(--primary-clr);
@@ -213,13 +213,6 @@ body {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-}
-
-#form-register.show,
-#video-wrapper.show,
-#search-catalog-wrapper.show {
-  opacity: 1;
-  pointer-events: initial;
 }
 
 /* ====================== HEADER ====================== */
@@ -316,6 +309,10 @@ body {
   background-color: inherit;
 }
 
+/* 
+----- FORM SIGNUP OVERLAY 
+*/
+
 .form-wrapper {
   position: relative;
   top: 10%;
@@ -334,6 +331,11 @@ body {
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
+}
+
+#form-register.show {
+  opacity: 1;
+  pointer-events: initial;
 }
 
 #form-register.show .form-wrapper {
@@ -446,6 +448,10 @@ body {
   -o-transform: rotateY(180deg);
 }
 
+/* 
+----- TOAST NOTIFICATION
+*/
+
 #toast-wrapper {
   position: fixed;
   top: 0;
@@ -502,7 +508,6 @@ body {
 }
 
 /* ====================== HERO ====================== */
-
 #hero .container-lg {
   display: flex;
   flex-direction: column;
@@ -582,6 +587,10 @@ body {
   background-color: var(--white-clr);
 }
 
+/* 
+----- ASIDE DETAIL PRODUCT
+*/
+
 #product {
   background: url('../../assets/images/bg-mobile.svg') no-repeat center / cover;
   width: 100%;
@@ -634,6 +643,15 @@ body {
   -o-border-radius: 12px;
 }
 
+/* 
+----- VIDEO OVERLAY
+*/
+
+#video-wrapper.show {
+  opacity: 1;
+  pointer-events: initial;
+}
+
 #video-wrapper .container {
   display: grid;
   place-items: center;
@@ -664,7 +682,20 @@ body {
   -o-transform: scale(1);
 }
 
-#video-wrapper.show .container .btn__close__overlay,
+#video-wrapper.show .container .btn__close__overlay {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+/* 
+----- SEARCH CATALOG OVERLAY
+*/
+
+#search-catalog-wrapper.show {
+  opacity: 1;
+  pointer-events: initial;
+}
+
 #search-catalog-wrapper.show .container .btn__close__overlay {
   opacity: 1;
   pointer-events: initial;
@@ -866,6 +897,10 @@ body {
   font: normal var(--fw-700) 1.8rem / var(--lh-28) var(--font-inter);
   letter-spacing: -0.18px;
 }
+
+/* 
+----- ACCORDION
+*/
 
 .categories__accordion {
   display: flex;
@@ -1230,7 +1265,11 @@ footer .container {
   font: normal var(--fw-400) 1.2rem / normal var(--font-jakarta-sans);
 }
 
-.footer__copyright__mobile{
+.footer__copyright__mobile {
   color: var(--footer-clr);
   font: normal var(--fw-400) 1rem / normal var(--font-jakarta-sans);
+}
+
+.footer__copyright {
+  display: none;
 }
