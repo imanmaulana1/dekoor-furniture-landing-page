@@ -92,6 +92,7 @@
                 name="username"
                 id="username-signup"
                 placeholder="Enter your username"
+                autocomplete="username"
               />
             </div>
             <div class="form__group">
@@ -110,6 +111,7 @@
                 name="password"
                 id="password-signup"
                 placeholder="Enter your password"
+                autocomplete="current-password"
               />
             </div>
             <div class="form__cta">
@@ -131,6 +133,7 @@
                 name="email"
                 id="email-signin"
                 placeholder="Enter your email"
+                autocomplete="email"
               />
             </div>
             <div class="form__group">
@@ -140,6 +143,7 @@
                 name="password"
                 id="password-signin"
                 placeholder="Enter your password"
+                autocomplete="current-password"
               />
             </div>
             <div class="form__cta">
@@ -455,10 +459,10 @@
             </div>
           </div>
           <div class="products__item__cta">
-            <button class="btn__item__products">
+            <button class="btn__item__products" id="btn-prev">
               <img src="./assets/icons/arrow_back_ios.svg" alt="prev button" />
             </button>
-            <button class="btn__item__products">
+            <button class="btn__item__products" id="btn-next">
               <img
                 src="./assets/icons/arrow_forward_ios.svg"
                 alt="prev button"

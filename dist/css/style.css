@@ -1014,11 +1014,26 @@ body {
   bottom: 16px;
   opacity: 0;
   pointer-events: none;
+  transform: translateY(2rem);
+  -webkit-transform: translateY(2rem);
+  -moz-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  -o-transform: translateY(2rem);
+  transition: all 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
 }
 
 .products__item.active .products__item__desc {
   opacity: 1;
   pointer-events: initial;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 .products__item {
@@ -1032,6 +1047,11 @@ body {
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
   overflow: hidden;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
 }
 
 .products__item.active {
@@ -1078,4 +1098,10 @@ body {
 .btn__item__products img {
   width: 16px;
   height: 16px;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+  outline: 1px solid red;
 }

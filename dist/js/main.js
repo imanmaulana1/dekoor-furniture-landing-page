@@ -20,11 +20,11 @@ function flipModalInput() {
   const formWrapper = document.querySelector('.form-wrapper');
 
   if (!formWrapper.classList.contains('rotate')) {
-    return getClass(formWrapper, 'rotate'), resetMyForm(formRegister);
+    return getClass(formWrapper, 'rotate'), resetMyForm(registerForm);
   }
 
   removeClass(formWrapper, 'rotate');
-  resetMyForm(formLogin);
+  resetMyForm(loginForm);
 }
 
 function handleModalInput() {
@@ -99,12 +99,50 @@ function getAccordionItems() {
   return accordionItems;
 }
 
-const formRegister = document.querySelector('.front'),
-  formLogin = document.querySelector('.back'),
-  formSearchCatalog = document.getElementById('search-catalog');
+function getSlides() {
+  return document.querySelectorAll('.products__item');
+}
 
-const btnHamburger = document.getElementById('btn-hamburger');
-btnHamburger.addEventListener('click', handleHamburgerMenu);
+function moveToNextSlide() {
+  const slides = getSlides();
+
+  if (index >= slides.length - 1) return;
+
+  index++;
+
+  slideContainer.style.transform = `translateX(-${slideWidth * index}px)`;
+  slideContainer.style.transition = `.7s`;
+
+  slides[index].classList.add('active');
+
+  slides.forEach((slide, idx) => {
+    if (idx !== index) slide.classList.remove('active');
+  });
+}
+
+function moveToPrevSlide() {
+  if (index <= 0) return;
+
+  index--;
+
+  slideContainer.style.transform = `translateX(${-slideWidth * index}px)`;
+  slideContainer.style.transition = `.7s`;
+
+  const slides = getSlides();
+
+  slides[index].classList.add('active');
+
+  slides.forEach((slide, idx) => {
+    if (idx !== index) slide.classList.remove('active');
+  });
+}
+
+const registerForm = document.querySelector('.front'),
+  loginForm = document.querySelector('.back'),
+  searchCatalogForm = document.getElementById('search-catalog');
+
+const hamburgerBtn = document.getElementById('btn-hamburger');
+hamburgerBtn.addEventListener('click', handleHamburgerMenu);
 
 const navClose = document.querySelector('.nav__close');
 navClose.addEventListener('click', handleHamburgerMenu);
@@ -114,20 +152,20 @@ navLinks.forEach((navLink) => {
   navLink.addEventListener('click', handleHamburgerMenu);
 });
 
-const btnSignups = document.querySelectorAll('.btn__sign');
-btnSignups.forEach((btnSignup) => {
-  btnSignup.addEventListener('click', handleModalInput);
+const signupBtns = document.querySelectorAll('.btn__sign');
+signupBtns.forEach((signupBtn) => {
+  signupBtn.addEventListener('click', handleModalInput);
 });
 
-const btnCloseForms = document.querySelectorAll('.btn__close');
-btnCloseForms.forEach((btnCloseForm, index) => {
-  btnCloseForm.addEventListener('click', () => {
+const closeFormBtns = document.querySelectorAll('.btn__close');
+closeFormBtns.forEach((closeFormBtn, index) => {
+  closeFormBtn.addEventListener('click', () => {
     handleModalInput();
 
     index == 1 ? flipModalInput() : '';
 
-    resetMyForm(formLogin);
-    resetMyForm(formRegister);
+    resetMyForm(loginForm);
+    resetMyForm(registerForm);
   });
 });
 
@@ -137,24 +175,24 @@ login.addEventListener('click', flipModalInput);
 const register = document.getElementById('register');
 register.addEventListener('click', flipModalInput);
 
-const btnCarts = document.querySelectorAll('.btn__cart');
-btnCarts.forEach((btnCart) => {
-  btnCart.addEventListener('click', showToastNotification);
+const cartBtns = document.querySelectorAll('.btn__cart');
+cartBtns.forEach((cartBtn) => {
+  cartBtn.addEventListener('click', showToastNotification);
 });
 
-const btnVideo = document.querySelector('.btn__video');
-btnVideo.addEventListener('click', showVideo);
+const videoBtn = document.querySelector('.btn__video');
+videoBtn.addEventListener('click', showVideo);
 
-const btnCloseVideo = document.getElementById('btn-close-video');
-btnCloseVideo.addEventListener('click', showVideo);
+const closeVideoBtn = document.getElementById('btn-close-video');
+closeVideoBtn.addEventListener('click', showVideo);
 
-const btnSearchCatalog = document.querySelector('.btn__catalog');
-btnSearchCatalog.addEventListener('click', handleModalSearchCatalog);
+const searchCatalogBtn = document.querySelector('.btn__catalog');
+searchCatalogBtn.addEventListener('click', handleModalSearchCatalog);
 
-const btnCloseSearchCatalog = document.getElementById('btn-close-catalog');
-btnCloseSearchCatalog.addEventListener('click', () => {
+const closeSearchCatalogBtn = document.getElementById('btn-close-catalog');
+closeSearchCatalogBtn.addEventListener('click', () => {
   handleModalSearchCatalog();
-  resetMyForm(formSearchCatalog);
+  resetMyForm(searchCatalogForm);
 });
 
 const imageCategories = getImageCategories();
@@ -186,3 +224,15 @@ accordions.forEach((accordionSelected) => {
     accordionDesc.style.maxHeight = `${accordionDesc.scrollHeight}px`;
   });
 });
+
+let index = 2;
+
+const slideContainer = document.querySelector('.products__item__wrapper');
+const slides = getSlides();
+const slideWidth = slides[0].clientWidth;
+
+const prevBtn = document.getElementById('btn-prev');
+prevBtn.addEventListener('click', moveToPrevSlide);
+
+const nextBtn = document.getElementById('btn-next');
+nextBtn.addEventListener('click', moveToNextSlide);
