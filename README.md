@@ -43,6 +43,6 @@ This is a personal portfolio website showcasing my projects, skills, and experie
 
 ## Figma File
 
-<a href="https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Test-Front-End---Furniture-Landing-Page-(Copy)?type=design&node-id=0%3A1&mode=design&t=6f566nhIYGCrlFde-1" target="_blank">https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Dekoor-Furniture-Landing-Page/</a>
+<a href="https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Test-Front-End---Furniture-Landing-Page-(Copy)?type=design&node-id=0%3A1&mode=design&t=6f566nhIYGCrlFde-1" target="_blank">[Dekoor-Furniture-Landing-Page](https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Test-Front-End---Furniture-Landing-Page-(Copy)?type=design&node-id=0%3A1&mode=design&t=6f566nhIYGCrlFde-1)</a>
 
 
