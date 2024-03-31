@@ -220,13 +220,13 @@ cartBtns.forEach((cartBtn) => {
   });
 });
 
-const videoBtn = document.querySelector('.btn__video');
+const videoBtn = document.getElementById('btn-video');
 videoBtn.addEventListener('click', showVideo);
 
 const closeVideoBtn = document.getElementById('btn-close-video');
 closeVideoBtn.addEventListener('click', showVideo);
 
-const searchCatalogBtn = document.querySelector('.btn__catalog');
+const searchCatalogBtn = document.getElementById('btn-search-catalog');
 searchCatalogBtn.addEventListener('click', handleModalSearchCatalog);
 
 const closeSearchCatalogBtn = document.getElementById('btn-close-catalog');
