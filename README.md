@@ -40,5 +40,7 @@ This is a personal portfolio website showcasing my projects, skills, and experie
 
 <a href="https://dekoor-furniture-landingpage.netlify.app/" target="_blank">https://dekoor-furniture-landingpage.netlify.app/</a>
 
+## Figma 
 
+<a href="https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Test-Front-End---Furniture-Landing-Page-(Copy)?type=design&node-id=4%3A600&mode=design&t=ln6iosQm4QMtmVd8-1" target="_blank">https://www.figma.com/file/cPaDZbic7h0L9DcPI31Xli/Test-Front-End---Furniture-Landing-Page-(Copy)?type=design&node-id=4%3A600&mode=design&t=ln6iosQm4QMtmVd8-1</a>
 
