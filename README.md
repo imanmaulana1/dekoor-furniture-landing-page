@@ -21,13 +21,13 @@ This is a personal portfolio website showcasing my projects, skills, and experie
 1. Clone the repository:
 
 ```bash
-  git clone https://github.com/imanmaulana1/Dekoor-Furniture-Landing-Page.git
+  git clone https://github.com/imanmaulana1/dekoor-furniture-landing-page.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-  cd Dekoor-Furniture-Landing-Page
+  cd dekoor-furniture-landing-page
 ```
 
 3. Open **index.html** in your web browser.
